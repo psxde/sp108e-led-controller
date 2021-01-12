@@ -2,6 +2,8 @@
 The SP108e controller is designed to control adressable led strips with a DATA and with or without an CLK line. It operates between 5-24V DC input. Default app is LED Shop from 
 from 'spledapps'. There are different versions of this controller. The newer version, I call it 'v2', has 2 VCC, 2 GND, 1 CLK and 1 DAT output on the right side and contains an ESP8285 with 2MB Flash inside.
 
+After hardware modification you can use Tasmota, WLED or ESPHome on it. If you are okay with 1MB Flash and no CLK out, you can use SP501e instead, which does not require a hardware modification and has additional drivers for non-addressable RGBCCT strips soldered (see https://margau.net/posts/2020-11-21-2h-led-hack/).
+
 ![sp108ev2](sp108ev2.png)
 
 ## Hardware Modification for flashing other firmware
