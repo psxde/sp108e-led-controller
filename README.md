@@ -12,3 +12,10 @@ The device use a separate controller (STM32F0) to control CLK and Data lines of 
 Connect GPIO2 to R4 for DAT out and GPIO13 for CLK out
 
 ![sp108ev2_inside](sp108ev2_inside.png)
+
+## Differences between controllers
+| Controller    | Flash | Data out | Clock out | Levelshifter | non-Adressable Driver out | needs Hardware mod | Button | LED | Case |
+|---------------|-------|----------|-----------|--------------|---------------------------|--------------------|--------|-----|------|
+| SP501E        | 1MB   | yes      | no        | no           | 5ch (RGB+CCT)             | no                 | yes    | no  | yes  |
+| SP108E        | 2MB   | yes      | yes       | yes          | no                        | yes                | no     | yes | yes  |
+| WeMos D1 Mini | 4MB   | yes      | yes       | no           | no                        | no                 | yes    | yes | no   |
