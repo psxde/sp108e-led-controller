@@ -13,6 +13,21 @@ Connect GPIO2 to R4 for DAT out and GPIO13 for CLK out
 
 ![sp108ev2_inside](sp108ev2_inside.png)
 
+## Compiling the firmware
+I have used the following build configuration in the `platform_override.ini` using the APA102 led strip:
+```
+[platformio]
+default_envs = sp108e
+
+[env:sp108e]
+board = esp8285
+platform = ${common.platform_wled_default}
+platform_packages = ${common.platform_packages}
+board_build.ldscript = ${common.ldscript_2m512k}
+build_unflags = ${common.build_unflags}
+build_flags = ${common.build_flags_esp8266} -D CLKPIN=13 -D LEDPIN=5 -D USE_APA102
+```
+
 ## Flashing firmware
 To flash firmware to the controller, you can use any ESP programmer module or other UART Serial adapter with 3,3V. Connect RX, TX, GND and VCC (3.3V!) between the programmer/power source and the ESP chip. To flash an ESP, you also have to connect GPIO0 to GND at boot time to enable the programming mode instead of starting the flashed firmware. See the corresponding pins at the image provided above.
 
